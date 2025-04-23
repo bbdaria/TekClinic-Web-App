@@ -40,7 +40,7 @@ export class Patient {
   emergency_contacts: EmergencyContact[]
   referred_by?: string
   special_note?: string
-  needs_translator: boolean
+  needs_translator: string
 
   constructor (scheme: PatientScheme) {
     this.id = scheme.id

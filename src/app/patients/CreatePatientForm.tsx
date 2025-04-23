@@ -206,6 +206,14 @@ const CreatePatientForm: React.FC<CreatePatientFormProps> =
             {...form.getInputProps('languages')}
           />
 
+          <Select
+            label="Needs Translator"
+            data={['Yes','No']}
+            placeholder="Select option"
+            key={form.key('needs_translator')}
+            {...form.getInputProps('needs_translator')}
+          />
+
           <DateInput
             withAsterisk
             label="Birth Date"

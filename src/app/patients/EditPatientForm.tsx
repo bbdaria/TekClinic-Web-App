@@ -62,7 +62,8 @@ const EditPatientForm: React.FC<EditPatientFormProps> =
         birth_date: initialPatient.birth_date,
         referred_by: initialPatient.referred_by ?? '',
         special_note: initialPatient.special_note ?? '',
-        emergency_contacts: initialPatient.emergency_contacts
+        emergency_contacts: initialPatient.emergency_contacts,
+        needs_translator: initialPatient.needs_translator ?? false
       }),
       validate: {
         name: (value: string) => nameValidator(value, true),
@@ -143,6 +144,7 @@ const EditPatientForm: React.FC<EditPatientFormProps> =
         initialPatient.special_note = data.special_note
         initialPatient.gender = data.gender
         initialPatient.phone_number = data.phone_number
+        initialPatient.needs_translator = data.needs_translator
 
         const result = await errorHandler(async () => {
           await toast.promise(initialPatient.update(session),
@@ -221,6 +223,13 @@ const EditPatientForm: React.FC<EditPatientFormProps> =
           placeholder="Select languages"
           key={form.key('languages')}
           {...form.getInputProps('languages')}
+        />
+        <Select
+          label="Needs translator"
+          data={['Yes','No']}
+          placeholder="Select option"
+          key={form.key('needs_translator')}
+          {...form.getInputProps('needs_translator')}
         />
 
         <DateInput

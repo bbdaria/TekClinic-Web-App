@@ -37,7 +37,7 @@ export interface PatientBaseScheme {
   emergency_contacts?: EmergencyContact[]
   referred_by?: string
   special_note?: string
-  needs_translator?: boolean
+  needs_translator?: string
 }
 
 export interface PatientScheme extends PatientBaseScheme {
@@ -47,7 +47,7 @@ export interface PatientScheme extends PatientBaseScheme {
   gender: Gender
   languages: string[]
   emergency_contacts: EmergencyContact[]
-  needs_translator: boolean
+  needs_translator: string
 }
 
 export interface PatientUpdateScheme extends PatientBaseScheme {
