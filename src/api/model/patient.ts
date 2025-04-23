@@ -40,6 +40,7 @@ export class Patient {
   emergency_contacts: EmergencyContact[]
   referred_by?: string
   special_note?: string
+  needs_translator: boolean
 
   constructor (scheme: PatientScheme) {
     this.id = scheme.id
@@ -54,6 +55,7 @@ export class Patient {
     this.emergency_contacts = scheme.emergency_contacts
     this.referred_by = scheme.referred_by
     this.special_note = scheme.special_note
+    this.needs_translator = scheme.needs_translator
   }
 
   static fromScheme (
@@ -94,6 +96,7 @@ export class Patient {
       emergency_contacts?: EmergencyContact[]
       referred_by?: string
       special_note?: string
+
     },
     session: Session
   ): Promise<number> => {

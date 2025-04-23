@@ -182,6 +182,10 @@ function PatientsPage (): React.JSX.Element {
         },
         {
           accessor: 'special_note'
+        },
+        {
+          accessor: 'needs_translator',
+          render: (patient: Patient) => patient.needs_translator ? 'Yes' : 'No'
         }
       ]}
     />

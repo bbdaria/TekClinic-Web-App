@@ -7,6 +7,14 @@
  * scheme is for updating.
  */
 
+
+/*
+* Structure:
+* <X>BaseScheme   - for creation
+* <X>Scheme       - for copy
+* <X>UpdateScheme - for updating
+*/
+
 export interface NamedAPIResourceList {
   count: number
   next: null | string
@@ -29,6 +37,7 @@ export interface PatientBaseScheme {
   emergency_contacts?: EmergencyContact[]
   referred_by?: string
   special_note?: string
+  needs_translator?: boolean
 }
 
 export interface PatientScheme extends PatientBaseScheme {
@@ -38,6 +47,7 @@ export interface PatientScheme extends PatientBaseScheme {
   gender: Gender
   languages: string[]
   emergency_contacts: EmergencyContact[]
+  needs_translator: boolean
 }
 
 export interface PatientUpdateScheme extends PatientBaseScheme {
