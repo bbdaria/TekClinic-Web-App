@@ -63,7 +63,7 @@ const EditPatientForm: React.FC<EditPatientFormProps> =
         referred_by: initialPatient.referred_by ?? '',
         special_note: initialPatient.special_note ?? '',
         emergency_contacts: initialPatient.emergency_contacts,
-        needs_translator: initialPatient.needs_translator ?? false
+        needs_translator: initialPatient.needs_translator ?? 'No'
       }),
       validate: {
         name: (value: string) => nameValidator(value, true),
@@ -226,7 +226,7 @@ const EditPatientForm: React.FC<EditPatientFormProps> =
         />
         <Select
           label="Needs translator"
-          data={['Yes','No']}
+          data={['Yes', 'No']}
           placeholder="Select option"
           key={form.key('needs_translator')}
           {...form.getInputProps('needs_translator')}

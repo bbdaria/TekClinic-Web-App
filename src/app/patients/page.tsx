@@ -185,7 +185,7 @@ function PatientsPage (): React.JSX.Element {
         },
         {
           accessor: 'needs_translator',
-          render: (patient: Patient) => patient.needs_translator ? 'Yes' : 'No'
+          render: (patient: Patient) => { console.log(patient.needs_translator); return patient.needs_translator }
         }
       ]}
     />

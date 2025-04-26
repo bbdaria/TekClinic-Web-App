@@ -53,6 +53,7 @@ const CreatePatientForm: React.FC<CreatePatientFormProps> =
         gender: 'unspecified' as Gender,
         phone_number: '',
         languages: [] as string[],
+        needs_translator: 'No',
         birth_date: null as Date | null,
         referred_by: '',
         special_note: '',
@@ -208,7 +209,7 @@ const CreatePatientForm: React.FC<CreatePatientFormProps> =
 
           <Select
             label="Needs Translator"
-            data={['Yes','No']}
+            data={['Yes', 'No']}
             placeholder="Select option"
             key={form.key('needs_translator')}
             {...form.getInputProps('needs_translator')}

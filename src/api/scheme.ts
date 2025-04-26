@@ -7,7 +7,6 @@
  * scheme is for updating.
  */
 
-
 /*
 * Structure:
 * <X>BaseScheme   - for creation

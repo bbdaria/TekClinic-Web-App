@@ -96,7 +96,7 @@ export class Patient {
       emergency_contacts?: EmergencyContact[]
       referred_by?: string
       special_note?: string
-
+      needs_translator?: string
     },
     session: Session
   ): Promise<number> => {
@@ -145,6 +145,7 @@ export class Patient {
       gender: this.gender,
       phone_number: this.phone_number != null ? toE164(this.phone_number) : undefined,
       languages: this.languages,
+      needs_translator: this.needs_translator,
       birth_date: format(this.birth_date, 'yyyy-MM-dd'),
       emergency_contacts: this.emergency_contacts.map((contact) => ({
         ...contact,
